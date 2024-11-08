@@ -4,6 +4,9 @@ MODEL_NAME=$(basename "$(dirname $CONFIG)")
 
 PORT=10902
 
+# Change to the directory containing train.py
+cd /kaggle/working/melo
+
 while : # auto-resume: the code sometimes crash due to bug of gloo on some gpus
 do
 torchrun --nproc_per_node=$GPUS \
